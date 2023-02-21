@@ -127,7 +127,7 @@ func NewBrokerAdminClient(
 
 // GetClusterID gets the ID of the cluster.
 func (c *BrokerAdminClient) GetClusterID(ctx context.Context) (string, error) {
-	resp, err := c.getMetadata(ctx, nil)
+	resp, err := c.getMetadata(ctx, []string{})
 	if err != nil {
 		return "", err
 	}
@@ -139,7 +139,7 @@ func (c *BrokerAdminClient) GetBrokers(ctx context.Context, ids []int) (
 	[]BrokerInfo,
 	error,
 ) {
-	metadataResp, err := c.getMetadata(ctx, nil)
+	metadataResp, err := c.getMetadata(ctx, []string{})
 	if err != nil {
 		return nil, err
 	}
@@ -221,7 +221,7 @@ func (c *BrokerAdminClient) GetBrokers(ctx context.Context, ids []int) (
 
 // GetBrokerIDs get the IDs of all brokers in the cluster.
 func (c *BrokerAdminClient) GetBrokerIDs(ctx context.Context) ([]int, error) {
-	resp, err := c.getMetadata(ctx, nil)
+	resp, err := c.getMetadata(ctx, []string{})
 	if err != nil {
 		return nil, err
 	}
