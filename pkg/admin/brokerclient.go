@@ -15,7 +15,7 @@ import (
 )
 
 const (
-	defaultTimeout = 30 * time.Second
+	defaultTimeout = 300 * time.Second
 
 	// Used for filtering out default configs
 	configSourceUnknown                    int8 = 0
